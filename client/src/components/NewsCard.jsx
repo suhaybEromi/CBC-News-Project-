@@ -1,0 +1,17 @@
+export default function NewsCard({ title, category, image, className }) {
+  return (
+    <div className="my-4">
+      <div className="flex justify-center">
+        <div className="flex flex-col space-y-1.5 w-full">
+          <img
+            src={image}
+            alt={title}
+            className={`w-75 h-45 object-cover rounded-3xl hover:scale-105 duration-300 ${className}`}
+          />
+          <h1 className="text-blue-600 font-bold">{category}</h1>
+          <h1 className="font-suhayb text-lg hover:text-blue-500">{title}</h1>
+        </div>
+      </div>
+    </div>
+  );
+}
