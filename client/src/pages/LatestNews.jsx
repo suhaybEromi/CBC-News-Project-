@@ -14,13 +14,13 @@ export default function LatestNews() {
 
       {/* Next Posts */}
       <div className="col-span-6 grid grid-cols-3 gap-5 mx-9">
-        {api.slice(0, 12).map((item) => (
+        {api.slice(0, 9).map((item) => (
           <Link key={item.id} to={`/news/${item.id}`}>
             <NewsCard
               title={item.title}
               category={item.category}
               image={item.image}
-              className="w-85 h-55"
+              className="w-full h-60"
             />
           </Link>
         ))}

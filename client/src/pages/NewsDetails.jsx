@@ -1,10 +1,9 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import api from "../services/api";
-import { useState } from "react";
 import NewsCard from "../components/NewsCard";
 
 export default function NewsDetails() {
-  const [visibleCountNews, setVisibleCountNews] = useState(4);
+  // const [visibleCountNews, setVisibleCountNews] = useState(4);
   const { id } = useParams();
 
   const newsItem = api.find((item) => item.id.toString() === id);
@@ -35,7 +34,7 @@ export default function NewsDetails() {
       </div>
 
       {/* Right Section */}
-      <div className="col-span-2 my-7 shadow-2xl rounded-lg px-4">
+      <div className="col-span-2 my-7 shadow-2xl rounded-lg px-4 top-0 h-fit">
         <div className="flex items-center mb-4 gap-2">
           <h1 className="font-suhayb text-2xl">نوێترین</h1>
           <hr className="border-indigo-900 border-2 rounded-2xl w-70" />
@@ -56,19 +55,22 @@ export default function NewsDetails() {
         ))}
       </div>
 
-      <div className="flex items-center gap-2 col-span-5 mx-10 my-8">
+      <div className="flex items-center gap-2 col-span-5 mx-10 mt-15 mb-5">
         <h1 className="font-suhayb text-2xl">هەواڵەکان</h1>
         <hr className="border-indigo-900 border-2 rounded-2xl w-full" />
       </div>
 
-      <div className="col-span-6 grid grid-cols-4 gap-6 mx-9">
-        {api.slice(6, 10 + visibleCountNews).map((item) => (
+      <div className="col-span-6 grid grid-cols-3 gap-6 mx-9">
+        {api.slice(6, 12).map((item) => (
           <div key={item.id}>
-            <NewsCard
-              title={item.title}
-              category={item.category}
-              image={item.image}
-            />
+            <Link to={`/news/${item.id}`}>
+              <NewsCard
+                title={item.title}
+                category={item.category}
+                image={item.image}
+                className="w-full h-60"
+              />
+            </Link>
           </div>
         ))}
       </div>

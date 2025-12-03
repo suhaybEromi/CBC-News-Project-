@@ -20,7 +20,7 @@ export default function Economics() {
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="w-full h-38 rounded-2xl hover:scale-105 duration-300"
+                    className="w-full h-38 rounded-lg hover:scale-105 duration-300"
                   />
                   <h1 className="text-blue-600 font-suhayb my-2">
                     ئابووری {item.date}

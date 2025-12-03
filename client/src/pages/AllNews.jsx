@@ -20,7 +20,7 @@ export default function AllNews() {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-xl w-55 h-35"
+                  className="rounded-lg w-55 h-35"
                 />
 
                 <h1 className="hover:text-gray-300 font-suhayb">

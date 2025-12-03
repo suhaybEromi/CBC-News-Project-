@@ -9,32 +9,38 @@ const apiReklam = [
   {
     id: 1,
     date: "2025-11-26",
+    category: "korek",
     image: korek,
   },
   {
     id: 2,
     date: "2025-11-25",
+    category: "tower",
     image: tower,
   },
   {
     id: 3,
     date: "2025-11-24",
+    category: "fastlink",
     image: fastlink,
   },
   {
     id: 4,
 
     date: "2025-11-23",
+    category: "hisense",
     image: hisense,
   },
   {
     id: 5,
     date: "2025-11-22",
+    category: "zain",
     image: zain,
   },
   {
     id: 6,
     date: "2025-11-22",
+    category: "asiacell",
     image: asiacell,
   },
 ];

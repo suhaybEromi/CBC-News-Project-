@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import api from "../services/api";
 import NewsCard from "../components/NewsCard";
 import { Link } from "react-router-dom";
@@ -31,12 +31,16 @@ export default function News() {
             className="flex whitespace-nowrap"
             style={{
               display: "inline-flex",
-              animation: "marquee 40s linear infinite",
+              animation: "marquee 50s linear infinite",
             }}
           >
             {api.slice(0, 5).map((item, index) => (
-              <Link to={`/news/${item.id}`} className="cursor-pointer">
-                <span key={item.id} className="text-white mx-6">
+              <Link
+                key={item.id}
+                to={`/news/${item.id}`}
+                className="cursor-pointer"
+              >
+                <span className="text-white mx-6">
                   {item.title}
                   {index !== api.length - 1 && <span className="mx-4">|</span>}
                 </span>
@@ -53,13 +57,14 @@ export default function News() {
         </div>
 
         {/* Content under هەواڵەکان */}
+
         {api.slice(0, 1).map((item) => (
-          <Link to={`/news/${item.id}`}>
+          <Link key={item.id} to={`/news/${item.id}`}>
             <div className="space-y-5">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-150 rounded-lg hover:scale-105 duration-300"
+                className="w-full max-w-[600px] rounded-lg hover:scale-105 duration-300"
               />
               <p className="text-gray-700 text-lg font-suhayb hover:text-blue-500">
                 {item.description}
@@ -77,6 +82,7 @@ export default function News() {
         </div>
 
         {/* Content under نوێترین */}
+
         {api.slice(0, 4).map((item) => (
           <Link to={`/news/${item.id}`}>
             <div className="flex items-center gap-3 my-10">

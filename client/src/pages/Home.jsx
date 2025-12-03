@@ -8,7 +8,7 @@ import Programs from "./Programs";
 import AllNews from "./AllNews";
 import Opinion from "./Opinion";
 import Culture from "./Culture";
-import Footer from "./Footer";
+import Sport from "./Sport";
 
 export default function Home() {
   return (
@@ -21,9 +21,9 @@ export default function Home() {
       <Economics />
       <Programs />
       <AllNews />
+      <Sport />
       <Opinion />
       <Culture />
-      <Footer />
     </header>
   );
 }

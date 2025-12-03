@@ -3,7 +3,10 @@ import icon from "../assets/img/cbc_icon.svg";
 
 export default function Footer() {
   return (
-    <div className="grid grid-cols-7 mt-20 mb-7 font-suhayb items-center">
+    <div
+      className="grid grid-cols-7 mt-20 mb-7 font-suhayb items-center"
+      dir="rtl"
+    >
       <div className="col-span-2 ms-10">
         <ul>
           <Link to="/kurdistan">
