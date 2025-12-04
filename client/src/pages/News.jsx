@@ -16,7 +16,7 @@ export default function News() {
   };
 
   return (
-    <div className="grid grid-cols-6">
+    <main className="grid grid-cols-6">
       {/* Left Section */}
 
       <div className="col-span-6 flex items-center rounded-full overflow-hidden my-5 p-2 bg-linear-to-t from-gray-800 to-indigo-900 w-full max-w-6xl lg:ms-8">
@@ -64,7 +64,7 @@ export default function News() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full max-w-[500px] lg:max-w-[600px] rounded-lg hover:scale-105 duration-300"
+                className="w-full max-w-[600px] rounded-lg hover:scale-105 duration-300"
               />
               <p className="text-gray-700 text-lg font-suhayb hover:text-blue-500">
                 {item.description}
@@ -127,6 +127,6 @@ export default function News() {
           )}
         </>
       )}
-    </div>
+    </main>
   );
 }

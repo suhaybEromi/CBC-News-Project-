@@ -1,6 +1,6 @@
 export default function NewsCard({ title, category, image, className }) {
   return (
-    <div className="my-4">
+    <article className="my-4">
       <div className="flex justify-center">
         <div className="flex flex-col space-y-1.5 w-full">
           <img
@@ -12,6 +12,6 @@ export default function NewsCard({ title, category, image, className }) {
           <h1 className="font-suhayb text-lg hover:text-blue-500">{title}</h1>
         </div>
       </div>
-    </div>
+    </article>
   );
 }

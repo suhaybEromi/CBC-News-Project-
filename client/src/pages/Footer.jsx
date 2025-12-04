@@ -3,7 +3,7 @@ import icon from "../assets/img/cbc_icon.svg";
 
 export default function Footer() {
   return (
-    <div
+    <footer
       className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-7 
       gap-6 mt-20 mb-7 font-suhayb items-start px-6"
       dir="rtl"
@@ -109,6 +109,6 @@ export default function Footer() {
           دیزاین و دروستکراوە
         </p>
       </div>
-    </div>
+    </footer>
   );
 }
