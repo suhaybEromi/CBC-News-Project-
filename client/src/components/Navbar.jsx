@@ -51,13 +51,14 @@ export default function Navbar() {
 
           <ul className="flex items-center space-x-10">
             {[
-              "هەواڵەکان",
-              "ڕاپۆرت",
-              "بەرنامەکان",
-              "پۆدکاست",
+              "کوردستان",
+              "جیهان",
+              "ئابووری",
+              "بیروڕا",
+              "کولتوور",
               "تەندرووستی",
-              "بەڵگەنامەیی",
               "وەرزش",
+              "بەرنامەکان",
             ].map((item) => (
               <li key={item} className="relative group cursor-pointer">
                 <span className={spanListStyleFirst}>{item}</span>

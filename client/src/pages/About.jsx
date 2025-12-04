@@ -3,7 +3,7 @@ import icon from "../assets/img/cbc_icon.svg";
 export default function About() {
   return (
     <div className="grid grid-cols-5 gap-6 p-4" dir="rtl">
-      <div className="col-span-3">
+      <div className="col-span-6 lg:col-span-3">
         <h1 className="font-suhayb text-2xl my-5">لەبارەی ئێمە</h1>
         <h1 className="text-gray-700 font-suhayb text-lg leading-8">
           دەربارەی CBC News پلاتفۆرمی هەواڵی دیجیتاڵە کە بە پێویستی بەرزترین
@@ -27,7 +27,7 @@ export default function About() {
       </div>
 
       <div className="col-span-2 my-10 flex justify-center items-center">
-        <img src={icon} alt="icon" className="w-70 h-60" />
+        <img src={icon} alt="icon" className="w-70 h-60 hidden lg:block" />
       </div>
     </div>
   );

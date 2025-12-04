@@ -19,9 +19,9 @@ export default function News() {
     <div className="grid grid-cols-6">
       {/* Left Section */}
 
-      <div className="col-span-6 flex items-center rounded-full overflow-hidden my-5 p-2 bg-linear-to-t from-gray-800 to-indigo-900 w-300 ms-8">
+      <div className="col-span-6 flex items-center rounded-full overflow-hidden my-5 p-2 bg-linear-to-t from-gray-800 to-indigo-900 w-full max-w-6xl lg:ms-8">
         {/* Fixed Header */}
-        <div className="bg-white text-black font-bold p-2 rounded-full w-30">
+        <div className="bg-white text-black font-bold p-2 rounded-full w-31 lg:w-30 text-sm lg:text-[17px]">
           سەردێرەکان :
         </div>
 
@@ -50,10 +50,10 @@ export default function News() {
         </div>
       </div>
 
-      <div className="col-span-4 ms-10 my-7">
+      <div className="col-span-6 lg:col-span-4 lg:ms-10 my-7 px-1 md:px-3 lg:px-0">
         <div className="flex items-center mb-4 gap-2">
           <h1 className="font-suhayb text-2xl">هەواڵەکان</h1>
-          <hr className="border-indigo-900 border-2 rounded-2xl w-140" />
+          <hr className="border-indigo-900 border-2 rounded-2xl w-full lg:w-full lg:max-w-xl" />
         </div>
 
         {/* Content under هەواڵەکان */}
@@ -64,7 +64,7 @@ export default function News() {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full max-w-[600px] rounded-lg hover:scale-105 duration-300"
+                className="w-full max-w-[500px] lg:max-w-[600px] rounded-lg hover:scale-105 duration-300"
               />
               <p className="text-gray-700 text-lg font-suhayb hover:text-blue-500">
                 {item.description}
@@ -75,23 +75,22 @@ export default function News() {
       </div>
 
       {/* Right Section */}
-      <div className="col-span-2 my-7 shadow-2xl rounded-lg px-4">
+      <div className="col-span-6 lg:col-span-2 my-7 shadow-2xl rounded-lg px-1 md:px-3 lg:px-4">
         <div className="flex items-center mb-4 gap-2">
           <h1 className="font-suhayb text-2xl">نوێترین</h1>
-          <hr className="border-indigo-900 border-2 rounded-2xl w-70" />
+          <hr className="border-indigo-900 border-2 rounded-2xl w-50 lg:w-full lg:max-w-[250px]" />
         </div>
 
         {/* Content under نوێترین */}
-
         {api.slice(0, 4).map((item) => (
           <Link to={`/news/${item.id}`}>
             <div className="flex items-center gap-3 my-10">
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-[130px] rounded-lg hover:scale-105 duration-300"
+                className="w-[115px] lg:w-[130px] rounded-lg hover:scale-105 duration-300"
               />
-              <p className="text-gray-700 font-suhayb hover:text-blue-500">
+              <p className="text-gray-700 font-suhayb hover:text-blue-500 text-sm lg:text-[16px]">
                 {item.description}
               </p>
             </div>
@@ -99,7 +98,7 @@ export default function News() {
         ))}
       </div>
 
-      <div className="col-span-6 grid grid-cols-4 gap-6 mx-9">
+      <div className="col-span-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-1 lg:mx-9">
         {api.slice(6, 10 + visibleCountNews).map((item) => (
           <Link to={`/news/${item.id}`}>
             <div key={item.id}>
@@ -107,6 +106,7 @@ export default function News() {
                 title={item.title}
                 category={item.category}
                 image={item.image}
+                className="lg:h-45"
               />
             </div>
           </Link>

@@ -9,21 +9,22 @@ export default function AllNews() {
       </div>
 
       <div className="col-span-6">
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
           {api.slice(0, 6).map((item) => (
             <div key={item.id} className="px-5">
               <hr className="border-white border opacity-40 my-3" />
+
               <Link
                 to={`/news/${item.id}`}
-                className="flex items-center gap-4 p-4 rounded-2xl"
+                className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-2xl"
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="rounded-lg w-55 h-35"
+                  className="rounded-lg w-full md:w-48 lg:w-65 h-45 object-cover"
                 />
 
-                <h1 className="hover:text-gray-300 font-suhayb">
+                <h1 className="hover:text-gray-300 font-suhayb text-lg md:text-base">
                   {item.title}
                 </h1>
               </Link>

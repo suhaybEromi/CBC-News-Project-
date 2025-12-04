@@ -4,83 +4,105 @@ import icon from "../assets/img/cbc_icon.svg";
 export default function Footer() {
   return (
     <div
-      className="grid grid-cols-7 mt-20 mb-7 font-suhayb items-center"
+      className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-7 
+      gap-6 mt-20 mb-7 font-suhayb items-start px-6"
       dir="rtl"
     >
-      <div className="col-span-2 ms-10">
-        <ul>
-          <Link to="/kurdistan">
-            <li className="hover:text-blue-600">کوردستان</li>
-          </Link>
-
-          <Link to="/about">
-            <li className="hover:text-blue-600">دەربارەی ئێمە</li>
-          </Link>
-
-          <Link to="/opinion">
-            <li className="hover:text-blue-600">بیروڕا</li>
-          </Link>
-
-          <Link to="/economy">
-            <li className="hover:text-blue-600">ئابووری</li>
-          </Link>
+      {/* Column 1 */}
+      <div className="lg:col-span-2">
+        <ul className="space-y-2">
+          <li>
+            <Link to="/kurdistan" className="hover:text-blue-600">
+              کوردستان
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="hover:text-blue-600">
+              دەربارەی ئێمە
+            </Link>
+          </li>
+          <li>
+            <Link to="/opinion" className="hover:text-blue-600">
+              بیروڕا
+            </Link>
+          </li>
+          <li>
+            <Link to="/economy" className="hover:text-blue-600">
+              ئابووری
+            </Link>
+          </li>
         </ul>
       </div>
 
-      <div className="col-span-2">
-        <ul>
-          <Link to="/health">
-            <li className="hover:text-blue-600">تەندرووستی</li>
-          </Link>
-
-          <Link to="/world">
-            <li className="hover:text-blue-600">جیهان</li>
-          </Link>
-
-          <Link to="/culture">
-            <li className="hover:text-blue-600"> کەلتوور</li>
-          </Link>
-
-          <Link to="/advertise">
-            <li className="hover:text-blue-600"> رێکلام بکە</li>
-          </Link>
+      {/* Column 2 */}
+      <div className="lg:col-span-2">
+        <ul className="space-y-2">
+          <li>
+            <Link to="/health" className="hover:text-blue-600">
+              تەندرووستی
+            </Link>
+          </li>
+          <li>
+            <Link to="/world" className="hover:text-blue-600">
+              جیهان
+            </Link>
+          </li>
+          <li>
+            <Link to="/culture" className="hover:text-blue-600">
+              کولتوور
+            </Link>
+          </li>
+          <li>
+            <Link to="/advertise" className="hover:text-blue-600">
+              رێکلام بکە
+            </Link>
+          </li>
         </ul>
       </div>
 
-      <div className="col-span-2 -mt-5">
-        <ul>
-          <Link to="/programs">
-            <li className="hover:text-blue-600">بەرنامە</li>
-          </Link>
-
-          <Link to="/sports">
-            <li className="hover:text-blue-600">وەرزش</li>
-          </Link>
-
-          <Link to="/contact">
-            <li className="hover:text-blue-600">پەیوەندیمان پێوە بکە</li>
-          </Link>
+      {/* Column 3 */}
+      <div className="lg:col-span-2">
+        <ul className="space-y-2">
+          <li>
+            <Link to="/programs" className="hover:text-blue-600">
+              بەرنامە
+            </Link>
+          </li>
+          <li>
+            <Link to="/sports" className="hover:text-blue-600">
+              وەرزش
+            </Link>
+          </li>
+          <li>
+            <Link to="/contact" className="hover:text-blue-600">
+              پەیوەندیمان پێوە بکە
+            </Link>
+          </li>
         </ul>
       </div>
 
-      <div className="col-span-1">
-        <img src={icon} alt="icon" className="w-25" />
+      {/* Icon */}
+      <div className="flex justify-center lg:justify-start lg:col-span-1">
+        <img src={icon} alt="icon" className="w-20 hidden lg:block" />
       </div>
 
-      <div className="w-295 col-span-6 my-5 ms-10">
+      {/* Divider */}
+      <div className="col-span-2 md:col-span-2 lg:col-span-7 my-5">
         <hr />
       </div>
 
-      <div className="col-span-5 ms-10">
-        <p> © مافی بڵاوکردنەوەی پارێزراوە بۆ سی بی سی 2025</p>
+      {/* Bottom left */}
+      <div className="col-span-2 md:col-span-1 lg:col-span-5 text-[12px] md:text-[16px]">
+        <p>© مافی بڵاوکردنەوەی پارێزراوە بۆ سی بی سی 2025</p>
       </div>
 
-      <div className="col-span-2">
+      {/* Bottom right */}
+      <div className="col-span-2 md:col-span-1 lg:col-span-2 text-[13px] md:text-[16px]">
         <p>
           لەلایەن{" "}
           <Link
             to="https://suhayb.netlify.app"
-            className="hover:text-blue-600 duration-300 mt-2"
+            className="hover:text-blue-600 duration-300"
           >
             suhayb mohammed
           </Link>{" "}

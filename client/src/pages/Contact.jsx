@@ -2,41 +2,42 @@ import { FaEnvelopeOpen, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
   return (
-    <div className="grid grid-cols-6 gap-6 ms-10 my-10" dir="rtl">
-      <div className="col-span-6 ms-10 mt-7">
+    <div
+      className="grid grid-cols-1 lg:grid-cols-6 gap-6 mx-4 lg:mx-10"
+      dir="rtl"
+    >
+      {/* Header */}
+      <div className="col-span-1 lg:col-span-6 mt-17">
         <div className="flex items-center gap-4">
-          <h1 className="font-suhayb text-indigo-700 font-bold">
+          <h1 className="font-suhayb text-indigo-700 font-bold text-xl">
             پەیوەندی کردن
           </h1>
-          <hr className="border-indigo-900 border-2 rounded-2xl w-200" />
+          <hr className="border-indigo-900 border-2 rounded-2xl w-full lg:w-full lg:max-w-3xl" />
         </div>
       </div>
 
-      {/* contact items: email, mobile, location */}
-      <div className="col-span-6 grid grid-cols-6 gap-4 ms-10 mb-40 items-start">
-        <div className="col-span-2 flex items-center gap-4">
+      {/* Contact Items */}
+      <div className="col-span-1 lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
+        {/* Email */}
+        <div className="flex items-center gap-4 p-3 rounded-lg">
           <FaEnvelopeOpen className="text-2xl text-indigo-800" />
-          <div>
-            <p className="text-gray-600 text-lg font-medium">news@cbc.com</p>
-          </div>
+          <p className="text-gray-700 text-lg font-medium">news@cbc.com</p>
         </div>
 
-        <div className="col-span-2 flex items-center gap-4">
+        {/* Phone */}
+        <div className="flex items-center gap-4 p-3 rounded-lg">
           <FaPhoneAlt className="text-2xl text-indigo-800" />
-          <div>
-            <p className="text-gray-600 text-lg font-medium" dir="ltr">
-              +964 750 048 4170
-            </p>
-          </div>
+          <p className="text-gray-700 text-lg font-medium" dir="ltr">
+            +964 750 048 4170
+          </p>
         </div>
 
-        <div className="col-span-2 flex items-center gap-4">
+        {/* Location */}
+        <div className="flex items-center gap-4 p-3 rounded-lg">
           <FaMapMarkerAlt className="text-2xl text-indigo-800" />
-          <div>
-            <p className="text-gray-600 text-lg font-medium">
-              Erbil, Kurdistan Region, Iraq
-            </p>
-          </div>
+          <p className="text-gray-700 text-lg font-medium">
+            Erbil, Kurdistan Region, Iraq
+          </p>
         </div>
       </div>
     </div>

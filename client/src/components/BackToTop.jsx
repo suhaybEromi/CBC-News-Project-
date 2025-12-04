@@ -28,7 +28,7 @@ export default function BackToTop() {
       {visible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-5 right-5 w-14 h-14 text-center bg-white text-blue-800 text-4xl
+          className="fixed bottom-5 right-5 w-11 h-11 md:w-14 md:h-14 text-center bg-white text-blue-800 text-3xl md:text-4xl
             rounded-full 
             transition-all duration-300 cursor-pointer"
         >

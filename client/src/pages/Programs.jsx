@@ -17,10 +17,10 @@ export default function Programs() {
 
   return (
     <div className="grid grid-cols-6">
-      <div className="col-span-5 ms-10 mt-14 mb-3">
+      <div className="col-span-5 mx-2 lg:mx-10 mt-14 mb-3 hidden md:block">
         <div className="flex items-center mb-4 gap-2">
           <h1 className="font-suhayb text-2xl">بەرنامەکان</h1>
-          <hr className="border-indigo-900 border-2 rounded-2xl w-full" />
+          <hr className="border-indigo-900 border-2 rounded-2xl w-full lg:w-full lg:max-w-5xl" />
         </div>
 
         <Slider {...settings}>

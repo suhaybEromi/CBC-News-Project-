@@ -6,7 +6,7 @@ export default function NewsCard({ title, category, image, className }) {
           <img
             src={image}
             alt={title}
-            className={`w-75 h-45 object-cover rounded-lg hover:scale-105 duration-300 ${className}`}
+            className={`w-full max-w-9xl h-57 object-cover rounded-lg hover:scale-105 duration-300 ${className}`}
           />
           <h1 className="text-blue-600 font-bold">{category}</h1>
           <h1 className="font-suhayb text-lg hover:text-blue-500">{title}</h1>
