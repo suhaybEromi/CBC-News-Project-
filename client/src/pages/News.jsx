@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import api from "../services/api";
+import api from "../api/api.js";
 import NewsCard from "../components/NewsCard";
 import { Link } from "react-router-dom";
 
 export default function News() {
   const [visibleCountNews, setVisibleCountNews] = useState(4);
   const [visibleNews, setVisibleNews] = useState(true);
+  const [articles, setArticles] = useState([]);
 
   const loadMoreNews = () => {
     setVisibleCountNews((prev) => prev + 4);
@@ -14,6 +15,18 @@ export default function News() {
     setVisibleCountNews(20);
     setVisibleNews(false);
   };
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await api.get("/get-article");
+        setArticles(response.data.articles);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchArticles();
+  }, []);
 
   return (
     <main className="grid grid-cols-6">
@@ -34,15 +47,17 @@ export default function News() {
               animation: "marquee 50s linear infinite",
             }}
           >
-            {api.slice(0, 5).map((item, index) => (
+            {articles.slice(0, 5).map((item, index) => (
               <Link
-                key={item.id}
-                to={`/news/${item.id}`}
+                key={item._id}
+                to={`/news/${item._id}`}
                 className="cursor-pointer"
               >
                 <span className="text-white mx-6">
                   {item.title}
-                  {index !== api.length - 1 && <span className="mx-4">|</span>}
+                  {index !== articles.length - 1 && (
+                    <span className="mx-4">|</span>
+                  )}
                 </span>
               </Link>
             ))}
@@ -58,8 +73,8 @@ export default function News() {
 
         {/* Content under هەواڵەکان */}
 
-        {api.slice(0, 1).map((item) => (
-          <Link key={item.id} to={`/news/${item.id}`}>
+        {articles.slice(0, 1).map((item) => (
+          <Link key={item._id} to={`/news/${item._id}`}>
             <div className="space-y-5">
               <img
                 src={item.image}
@@ -82,8 +97,8 @@ export default function News() {
         </div>
 
         {/* Content under نوێترین */}
-        {api.slice(0, 4).map((item) => (
-          <Link to={`/news/${item.id}`}>
+        {articles.slice(0, 4).map((item) => (
+          <Link to={`/news/${item._id}`}>
             <div className="flex items-center gap-3 my-10">
               <img
                 src={item.image}
@@ -99,8 +114,8 @@ export default function News() {
       </div>
 
       <div className="col-span-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mx-1 lg:mx-9">
-        {api.slice(6, 10 + visibleCountNews).map((item) => (
-          <Link to={`/news/${item.id}`}>
+        {articles.slice(6, 10 + visibleCountNews).map((item) => (
+          <Link to={`/news/${item._id}`}>
             <div key={item.id}>
               <NewsCard
                 title={item.title}
@@ -115,7 +130,7 @@ export default function News() {
 
       {visibleNews && (
         <>
-          {visibleCountNews < api.length - 6 && (
+          {visibleCountNews < articles.length - 6 && (
             <div className="col-span-6 flex justify-center">
               <h1
                 onClick={loadMoreNews}

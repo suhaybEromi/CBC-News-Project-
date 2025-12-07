@@ -8,11 +8,17 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI;
-import articlesRouter from "./routes/articles.routes.js";
+const PREFIX = process.env.PREFIX;
+import articlesRouter from "./routes/articles.js";
 
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true,
+  })
+);
 app.use(express.json());
-app.use("/articles", articlesRouter);
+app.use(`/${PREFIX}`, articlesRouter);
 
 const connectDB = async () => {
   try {
